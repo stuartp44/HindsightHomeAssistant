@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.5...v0.1.6) (2026-06-27)
+
+
+### Bug Fixes
+
+* **addon:** set explicit ingress entry for control plane ([0d9ad4b](https://github.com/stuartp44/HindsightHomeAssistant/commit/0d9ad4b92c0142760008fb5430c04831bf3ef983))
+
 ## [0.1.5](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.4...v0.1.5) (2026-06-27)
 
 
