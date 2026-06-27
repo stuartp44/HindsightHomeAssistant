@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.2...v0.3.3) (2026-06-27)
+
+
+### Chores
+
+* pin upstream image to 0.6.2, add Dependabot for Docker/Actions ([c7db1f9](https://github.com/stuartp44/HindsightHomeAssistant/commit/c7db1f95db45d0c76b614d906e7e320cab44affa))
+
 ## [0.3.2](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.1...v0.3.2) (2026-06-27)
 
 
