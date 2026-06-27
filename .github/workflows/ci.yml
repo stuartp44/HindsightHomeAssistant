@@ -35,6 +35,16 @@ jobs:
           grep -q '^options:' hindsight/config.yaml
           grep -q '^schema:' hindsight/config.yaml
 
+      - name: Validate pinned upstream image exists
+        run: |
+          image=$(grep '^FROM ' hindsight/Dockerfile | awk '{print $2}')
+          repo=$(echo "$image" | cut -d: -f1 | sed 's|ghcr.io/||')
+          tag=$(echo "$image" | cut -d: -f2)
+          token=$(curl -sf "https://ghcr.io/token?scope=repository:${repo}:pull&service=ghcr.io" | jq -r .token)
+          curl -sf -o /dev/null \
+            -H "Authorization: Bearer ${token}" \
+            "https://ghcr.io/v2/${repo}/manifests/${tag}"
+
       - name: Ensure legacy mylife URLs are not present
         run: |
           ! rg -n "https?://[^[:space:]]*mylife" -S .
