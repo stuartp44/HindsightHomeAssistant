@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.2.0...v0.3.0) (2026-06-27)
+
+
+### Features
+
+* **addon:** auto-generate persistent API and UI access keys ([b5ff7f4](https://github.com/stuartp44/HindsightHomeAssistant/commit/b5ff7f45e2a13b74d7501456493a919295bae937))
+
+
+### Bug Fixes
+
+* **config:** remove unused ingress settings and clarify port descriptions ([1edde9c](https://github.com/stuartp44/HindsightHomeAssistant/commit/1edde9c95398224582c16150975251a1cba8df29))
+
 ## [0.2.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.7...v0.2.0) (2026-06-27)
 
 
