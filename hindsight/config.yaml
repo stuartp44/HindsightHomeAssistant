@@ -6,14 +6,13 @@ url: https://github.com/stuartp44/HindsightHomeAssistant/tree/main/hindsight
 startup: application
 boot: auto
 init: false
-ingress: true
-ingress_port: 9999
-ingress_entry: /
-ingress_stream: true
+webui: http://[HOST]:[PORT:9999]/
 ports:
   8888/tcp: 8888
+  9999/tcp: 9999
 ports_description:
-  8888/tcp: Hindsight API (direct access)
+  8888/tcp: Hindsight API
+  9999/tcp: Hindsight Control Plane UI
 panel_title: Hindsight
 panel_icon: mdi:eye-outline
 arch:
