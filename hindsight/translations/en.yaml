@@ -1,0 +1,16 @@
+configuration:
+  llm_api_key:
+    name: LLM API Key
+    description: >-
+      API key for your chosen LLM provider (e.g. OpenAI, Anthropic, Gemini).
+      Required.
+  llm_provider:
+    name: LLM Provider
+    description: >-
+      The LLM provider to use for memory extraction and reasoning.
+      Supported values: openai, anthropic, gemini, groq, ollama, lmstudio, minimax, atlas.
+  llm_model:
+    name: LLM Model
+    description: >-
+      The model name to use with your chosen provider.
+      Examples: gpt-4o-mini (OpenAI), claude-sonnet-4-5 (Anthropic), gemini-2.0-flash (Gemini).
