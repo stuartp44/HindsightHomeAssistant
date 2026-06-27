@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate startup script syntax
+        run: bash -n hindsight/run.sh
+
+      - name: Validate required repository metadata keys
+        run: |
+          test -f repository.yaml
+          grep -q '^name:' repository.yaml
+          grep -q '^url:' repository.yaml
+          grep -q '^maintainer:' repository.yaml
+
+      - name: Validate required add-on config keys
+        run: |
+          test -f hindsight/config.yaml
+          grep -q '^name:' hindsight/config.yaml
+          grep -q '^slug:' hindsight/config.yaml
+          grep -q '^version:' hindsight/config.yaml
+          grep -q '^ingress:' hindsight/config.yaml
+          grep -q '^options:' hindsight/config.yaml
+          grep -q '^schema:' hindsight/config.yaml
+
+      - name: Ensure legacy mylife URLs are not present
+        run: |
+          ! rg -n "https?://[^[:space:]]*mylife" -S .

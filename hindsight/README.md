@@ -38,3 +38,16 @@ This add-on wraps the official `ghcr.io/vectorize-io/hindsight:latest` image and
 - This scaffold is for Home Assistant OS/Supervised add-ons.
 - If you run Home Assistant Container/Core, run Hindsight separately and embed it via panel iframe.
 - Data is persisted to `/data/.pg0` inside the add-on container.
+- The startup script reads options as root, then runs Hindsight as an unprivileged user so embedded PostgreSQL can initialize cleanly.
+
+## CI and releases
+
+- A minimal CI pipeline runs on push/PR at `.github/workflows/ci.yml`.
+- CI currently verifies:
+   - `hindsight/run.sh` shell syntax
+   - required keys in `repository.yaml`
+   - required keys in `hindsight/config.yaml`
+   - no remaining legacy URL references
+- Release Please runs on pushes to `main` at `.github/workflows/release-please.yml`.
+- Release version state is tracked in `.release-please-manifest.json` and configured via `.release-please-config.json`.
+- Use Conventional Commit style messages (`feat:`, `fix:`, `chore:`) so Release Please can generate release PRs and tags correctly.
