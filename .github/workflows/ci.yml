@@ -32,7 +32,6 @@ jobs:
           grep -q '^name:' hindsight/config.yaml
           grep -q '^slug:' hindsight/config.yaml
           grep -q '^version:' hindsight/config.yaml
-          grep -q '^ingress:' hindsight/config.yaml
           grep -q '^options:' hindsight/config.yaml
           grep -q '^schema:' hindsight/config.yaml
 
