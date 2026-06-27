@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.5](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.4...v0.3.5) (2026-06-27)
+
+
+### Chores
+
+* bump actions/checkout from 4 to 7 ([645be62](https://github.com/stuartp44/HindsightHomeAssistant/commit/645be6250ded698792df8bb1b92ceeffc32c8e93))
+* bump actions/checkout from 4 to 7 ([a3e99ad](https://github.com/stuartp44/HindsightHomeAssistant/commit/a3e99ad5a70867b2d170facb5a339dec28cf7b5d))
+* bump googleapis/release-please-action from 4 to 5 ([308e0ab](https://github.com/stuartp44/HindsightHomeAssistant/commit/308e0abb0237e886ed0893ab6a04d14b53cc738e))
+* bump googleapis/release-please-action from 4 to 5 ([48005f7](https://github.com/stuartp44/HindsightHomeAssistant/commit/48005f79ddc90ba60a48608874f84b68fa472a3c))
+* bump vectorize-io/hindsight from 0.6.2 to 0.8.3 in /hindsight ([bd15172](https://github.com/stuartp44/HindsightHomeAssistant/commit/bd15172f100d1080e6ded03ae1706cf00c686a83))
+* bump vectorize-io/hindsight from 0.6.2 to 0.8.3 in /hindsight ([3061cfe](https://github.com/stuartp44/HindsightHomeAssistant/commit/3061cfe81b09dc1c3410cde9652373bcb6c48ae9))
+
 ## [0.3.4](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.3...v0.3.4) (2026-06-27)
 
 
