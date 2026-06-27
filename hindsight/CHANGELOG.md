@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.4...v0.1.5) (2026-06-27)
+
+
+### CI
+
+* **release-please:** write changelog to addon directory ([b13734d](https://github.com/stuartp44/HindsightHomeAssistant/commit/b13734d4ae4afe19e25ce11e779bddb707636a43))
+
 ## 0.1.3 - 2026-06-27
 
 - CI: Release Please now updates the add-on config version automatically.
