@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.6...v0.1.7) (2026-06-27)
+
+
+### Bug Fixes
+
+* **addon:** keep dataplane API url internal without ingress path ([a4ae455](https://github.com/stuartp44/HindsightHomeAssistant/commit/a4ae4555c7d70d17a388e9cfbc7eae127beec832))
+
 ## [0.1.6](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.5...v0.1.6) (2026-06-27)
 
 
