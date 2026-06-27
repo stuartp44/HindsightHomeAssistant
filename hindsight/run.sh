@@ -48,7 +48,19 @@ export HINDSIGHT_API_HOST="0.0.0.0"
 export HINDSIGHT_API_PORT="${API_PORT:-8888}"
 export HINDSIGHT_CP_PORT="${UI_PORT:-9999}"
 export HINDSIGHT_CP_HOSTNAME="0.0.0.0"
+
+BASE_PATH="${INGRESS_ENTRY:-}"
+if [[ -n "${BASE_PATH}" ]]; then
+  BASE_PATH="/${BASE_PATH#/}"
+  BASE_PATH="${BASE_PATH%/}"
+fi
+
+if [[ -n "${BASE_PATH}" ]]; then
+  export NEXT_PUBLIC_BASE_PATH="${BASE_PATH}"
+fi
+
 export HINDSIGHT_CP_DATAPLANE_API_URL="http://127.0.0.1:${HINDSIGHT_API_PORT}"
+
 export HINDSIGHT_ENABLE_API="true"
 export HINDSIGHT_ENABLE_CP="true"
 
@@ -57,6 +69,9 @@ echo "  API: ${HINDSIGHT_API_PORT}"
 echo "  UI: ${HINDSIGHT_CP_PORT}"
 echo "  Provider: ${HINDSIGHT_API_LLM_PROVIDER}"
 echo "  Data dir: ${PG0_DATA_DIR}"
+if [[ -n "${BASE_PATH}" ]]; then
+  echo "  Ingress base path: ${BASE_PATH}"
+fi
 
 if [[ "$(id -u)" -eq 0 ]]; then
   echo "Starting as non-root user: ${APP_USER}"
