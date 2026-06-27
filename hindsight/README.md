@@ -43,6 +43,7 @@ This add-on wraps the official `ghcr.io/vectorize-io/hindsight:latest` image and
 ## CI and releases
 
 - A minimal CI pipeline runs on push/PR at `.github/workflows/ci.yml`.
+- Commit message linting runs on pull requests at `.github/workflows/commit-lint.yml`.
 - CI currently verifies:
    - `hindsight/run.sh` shell syntax
    - required keys in `repository.yaml`
