@@ -8,6 +8,8 @@ boot: auto
 init: false
 ingress: true
 ingress_port: 9999
+ingress_entry: /
+ingress_stream: true
 panel_title: Hindsight
 panel_icon: mdi:eye-outline
 arch:

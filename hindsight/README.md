@@ -7,6 +7,7 @@ This add-on wraps the official `ghcr.io/vectorize-io/hindsight:latest` image and
 - Image: `ghcr.io/vectorize-io/hindsight:latest`
 - API: internal port `8888` (configurable)
 - Control Plane UI: internal port `9999` (configurable, used by Ingress)
+- Ingress is explicitly mapped to `/` via `ingress_entry` to avoid path-prefix 404 issues behind Home Assistant.
 
 ## Add-on options
 
