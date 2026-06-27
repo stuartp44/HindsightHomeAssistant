@@ -66,6 +66,7 @@ if [[ ! -f "${API_KEY_FILE}" ]]; then
 fi
 export HINDSIGHT_API_TENANT_EXTENSION="hindsight_api.extensions.builtin.tenant:ApiKeyTenantExtension"
 export HINDSIGHT_API_TENANT_API_KEY="$(cat "${API_KEY_FILE}")"
+export HINDSIGHT_CP_DATAPLANE_API_KEY="$(cat "${API_KEY_FILE}")"
 
 export HINDSIGHT_ENABLE_API="true"
 export HINDSIGHT_ENABLE_CP="true"
