@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.3...v0.3.4) (2026-06-27)
+
+
+### Bug Fixes
+
+* **ci:** use docker manifest inspect to validate pinned image ([35e42e5](https://github.com/stuartp44/HindsightHomeAssistant/commit/35e42e59f300c375e50b65a9791d6de73ab00faa))
+
 ## [0.3.3](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.2...v0.3.3) (2026-06-27)
 
 
