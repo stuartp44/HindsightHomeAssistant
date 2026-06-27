@@ -45,7 +45,14 @@
     ".": {
       "release-type": "simple",
       "include-component-in-tag": false,
-      "include-v-in-tag": true
+      "include-v-in-tag": true,
+      "extra-files": [
+        {
+          "type": "yaml",
+          "path": "hindsight/config.yaml",
+          "jsonpath": "$.version"
+        }
+      ]
     }
   }
 }
