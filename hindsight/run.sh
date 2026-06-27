@@ -51,6 +51,22 @@ export HINDSIGHT_CP_HOSTNAME="0.0.0.0"
 
 export HINDSIGHT_CP_DATAPLANE_API_URL="http://127.0.0.1:${HINDSIGHT_API_PORT}"
 
+# Auto-generate persistent access keys on first run
+CP_KEY_FILE="/data/.cp_access_key"
+if [[ ! -f "${CP_KEY_FILE}" ]]; then
+  python3 -c 'import secrets; print(secrets.token_urlsafe(32))' > "${CP_KEY_FILE}"
+  chmod 600 "${CP_KEY_FILE}"
+fi
+export HINDSIGHT_CP_ACCESS_KEY="$(cat "${CP_KEY_FILE}")"
+
+API_KEY_FILE="/data/.api_access_key"
+if [[ ! -f "${API_KEY_FILE}" ]]; then
+  python3 -c 'import secrets; print(secrets.token_urlsafe(32))' > "${API_KEY_FILE}"
+  chmod 600 "${API_KEY_FILE}"
+fi
+export HINDSIGHT_API_TENANT_EXTENSION="hindsight_api.extensions.builtin.tenant:ApiKeyTenantExtension"
+export HINDSIGHT_API_TENANT_API_KEY="$(cat "${API_KEY_FILE}")"
+
 export HINDSIGHT_ENABLE_API="true"
 export HINDSIGHT_ENABLE_CP="true"
 
@@ -59,6 +75,8 @@ echo "  API: ${HINDSIGHT_API_PORT}"
 echo "  UI: ${HINDSIGHT_CP_PORT}"
 echo "  Provider: ${HINDSIGHT_API_LLM_PROVIDER}"
 echo "  Data dir: ${PG0_DATA_DIR}"
+echo "  UI access key: ${HINDSIGHT_CP_ACCESS_KEY}"
+echo "  API access key: ${HINDSIGHT_API_TENANT_API_KEY}"
 
 if [[ "$(id -u)" -eq 0 ]]; then
   echo "Starting as non-root user: ${APP_USER}"
