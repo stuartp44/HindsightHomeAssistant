@@ -37,11 +37,13 @@ Both keys survive restarts. To rotate, delete `/data/.cp_access_key` or `/data/.
 
 ## Configuration options
 
+Option labels and descriptions are translated via `hindsight/translations/en.yaml` (English, default).
+
 | Option | Required | Default | Description |
 |--------|----------|---------|-------------|
-| `llm_api_key` | Yes | — | API key for your LLM provider |
-| `llm_provider` | No | `openai` | Provider: `openai`, `anthropic`, `gemini`, `groq`, `ollama`, `lmstudio`, `minimax`, `atlas` |
-| `llm_model` | No | `gpt-4o-mini` | Model name for your chosen provider |
+| `llm_api_key` | Yes | — | API key for your chosen LLM provider (e.g. OpenAI, Anthropic, Gemini) |
+| `llm_provider` | No | `openai` | The LLM provider to use for memory extraction and reasoning. Supported: `openai`, `anthropic`, `gemini`, `groq`, `ollama`, `lmstudio`, `minimax`, `atlas` |
+| `llm_model` | No | `gpt-4o-mini` | The model name to use with your chosen provider (e.g. `gpt-4o-mini`, `claude-sonnet-4-5`, `gemini-2.0-flash`) |
 
 ## API usage
 
