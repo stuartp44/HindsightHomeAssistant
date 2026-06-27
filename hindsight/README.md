@@ -40,6 +40,7 @@ This add-on wraps the official `ghcr.io/vectorize-io/hindsight:latest` image and
 - If you run Home Assistant Container/Core, run Hindsight separately and embed it via panel iframe.
 - Data is persisted to `/data/.pg0` inside the add-on container.
 - The startup script reads options as root, then runs Hindsight as an unprivileged user so embedded PostgreSQL can initialize cleanly.
+- When running behind Home Assistant Ingress, the startup script maps `INGRESS_ENTRY` to `HINDSIGHT_API_BASE_PATH` and `NEXT_PUBLIC_BASE_PATH` to prevent Web UI redirects to Home Assistant root.
 
 ## CI and releases
 

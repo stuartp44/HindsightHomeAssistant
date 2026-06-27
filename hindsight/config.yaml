@@ -10,6 +10,10 @@ ingress: true
 ingress_port: 9999
 ingress_entry: /
 ingress_stream: true
+ports:
+  8888/tcp: 8888
+ports_description:
+  8888/tcp: Hindsight API (direct access)
 panel_title: Hindsight
 panel_icon: mdi:eye-outline
 arch:
