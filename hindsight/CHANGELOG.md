@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.1...v0.3.2) (2026-06-27)
+
+
+### CI
+
+* remove ingress key check, add-on no longer uses ingress ([5a9cac3](https://github.com/stuartp44/HindsightHomeAssistant/commit/5a9cac3283803c59b66afb8b21e9591a7976cc01))
+
 ## [0.3.1](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.0...v0.3.1) (2026-06-27)
 
 
