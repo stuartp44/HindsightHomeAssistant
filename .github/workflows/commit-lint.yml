@@ -14,20 +14,4 @@ jobs:
       - name: Lint commit messages
         uses: wagoid/commitlint-github-action@v6
         with:
-          configFile: commitlint.config.cjsname: Commit Lint
-
-on:
-  pull_request:
-    types: [opened, edited, synchronize, reopened]
-
-permissions:
-  contents: read
-
-jobs:
-  commitlint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Lint commit messages
-        uses: wagoid/commitlint-github-action@v6
-        with:
           configFile: commitlint.config.cjs
