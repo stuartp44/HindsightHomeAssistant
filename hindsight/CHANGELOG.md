@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.1](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.0...v0.3.1) (2026-06-27)
+
+
+### Bug Fixes
+
+* **addon:** remove configurable port options, hardcode 8888 and 9999 ([977874c](https://github.com/stuartp44/HindsightHomeAssistant/commit/977874ccca6187b30b57b3073191edf83fbdaa4e))
+* **run.sh:** ensure HINDSIGHT_CP_DATAPLANE_API_KEY is set from API key file ([43073a3](https://github.com/stuartp44/HindsightHomeAssistant/commit/43073a33c58c6444b132b5fb133ba2e3e2051b72))
+
+
+### Documentation
+
+* add project README, rewrite addon README, add option translations ([efc3687](https://github.com/stuartp44/HindsightHomeAssistant/commit/efc36873d7ce4093be2fb1211747a7bdc09ac1c8))
+* align README option descriptions with translations file ([1ae5657](https://github.com/stuartp44/HindsightHomeAssistant/commit/1ae56575d8e9661219b97e46ba4c7e40ff0528aa))
+
 ## [0.3.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.2.0...v0.3.0) (2026-06-27)
 
 
