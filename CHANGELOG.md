@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.2...v0.1.3) (2026-06-27)
+
+
+### CI
+
+* **release-please:** bump addon config version via extra-files ([aca8d1f](https://github.com/stuartp44/HindsightHomeAssistant/commit/aca8d1f45a5430b375b4895018ed8ee7b8e195dc))
+
 ## [0.1.2](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.1...v0.1.2) (2026-06-27)
 
 
