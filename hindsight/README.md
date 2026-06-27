@@ -51,4 +51,5 @@ This add-on wraps the official `ghcr.io/vectorize-io/hindsight:latest` image and
    - no remaining legacy URL references
 - Release Please runs on pushes to `main` at `.github/workflows/release-please.yml`.
 - Release version state is tracked in `.release-please-manifest.json` and configured via `.release-please-config.json`.
+- Release Please uses the workflow token context (`GITHUB_TOKEN`). Ensure repository/org Actions settings allow this token to create pull requests.
 - Use Conventional Commit style messages (`feat:`, `fix:`, `chore:`) so Release Please can generate release PRs and tags correctly.
