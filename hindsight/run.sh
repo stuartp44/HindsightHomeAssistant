@@ -3,6 +3,7 @@ set -euo pipefail
 
 OPTIONS_FILE="/data/options.json"
 APP_USER="hindsight"
+APP_HOME="/home/${APP_USER}"
 
 if [[ ! -f "${OPTIONS_FILE}" ]]; then
   echo "ERROR: ${OPTIONS_FILE} not found"
@@ -59,7 +60,12 @@ echo "  Data dir: ${PG0_DATA_DIR}"
 
 if [[ "$(id -u)" -eq 0 ]]; then
   echo "Starting as non-root user: ${APP_USER}"
-  exec su -m -s /bin/bash -c "/app/start-all.sh" "${APP_USER}"
+  mkdir -p "${APP_HOME}"
+  if id -u "${APP_USER}" >/dev/null 2>&1; then
+    chown "${APP_USER}:${APP_USER}" "${APP_HOME}"
+  fi
+  echo "  Home dir: ${APP_HOME}"
+  exec env HOME="${APP_HOME}" su -m -s /bin/bash -c "/app/start-all.sh" "${APP_USER}"
 fi
 
 exec /app/start-all.sh
