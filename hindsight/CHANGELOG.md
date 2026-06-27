@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.7...v0.2.0) (2026-06-27)
+
+
+### Features
+
+* **addon:** add Hindsight icon and logo assets ([c6870cc](https://github.com/stuartp44/HindsightHomeAssistant/commit/c6870cc84839e3d2dceeaf2059cdc01bc9c5a341))
+
+
+### Bug Fixes
+
+* **addon:** expose api port 8888 on host ([030391f](https://github.com/stuartp44/HindsightHomeAssistant/commit/030391f7ee1fd6acb2b0917fdd0564d2135db2fc))
+
 ## [0.1.7](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.6...v0.1.7) (2026-06-27)
 
 
