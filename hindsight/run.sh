@@ -26,8 +26,6 @@ PY
 LLM_API_KEY="$(read_config llm_api_key)"
 LLM_PROVIDER="$(read_config llm_provider)"
 LLM_MODEL="$(read_config llm_model)"
-API_PORT="$(read_config api_port)"
-UI_PORT="$(read_config ui_port)"
 
 if [[ -z "${LLM_API_KEY}" ]]; then
   echo "ERROR: llm_api_key is required. Set it in the add-on configuration."
@@ -45,8 +43,8 @@ export HINDSIGHT_API_LLM_API_KEY="${LLM_API_KEY}"
 export HINDSIGHT_API_LLM_PROVIDER="${LLM_PROVIDER:-openai}"
 export HINDSIGHT_API_LLM_MODEL="${LLM_MODEL:-gpt-4o-mini}"
 export HINDSIGHT_API_HOST="0.0.0.0"
-export HINDSIGHT_API_PORT="${API_PORT:-8888}"
-export HINDSIGHT_CP_PORT="${UI_PORT:-9999}"
+export HINDSIGHT_API_PORT="8888"
+export HINDSIGHT_CP_PORT="9999"
 export HINDSIGHT_CP_HOSTNAME="0.0.0.0"
 
 export HINDSIGHT_CP_DATAPLANE_API_URL="http://127.0.0.1:${HINDSIGHT_API_PORT}"

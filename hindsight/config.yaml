@@ -25,11 +25,7 @@ options:
   llm_api_key: ''
   llm_provider: openai
   llm_model: gpt-4o-mini
-  api_port: 8888
-  ui_port: 9999
 schema:
   llm_api_key: password
   llm_provider: list(openai|anthropic|gemini|groq|ollama|lmstudio|minimax|atlas)
   llm_model: str
-  api_port: int(1,65535)
-  ui_port: int(1,65535)
