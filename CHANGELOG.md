@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.1...v0.1.2) (2026-06-27)
+
+
+### Bug Fixes
+
+* **addon:** make hindsight user creation idempotent ([e7e2b68](https://github.com/stuartp44/HindsightHomeAssistant/commit/e7e2b684c5bc5f52afa08cd7cd9773ede05b8174))
+
+
+### Documentation
+
+* update README to clarify Release Please token usage and commit message style ([ea27392](https://github.com/stuartp44/HindsightHomeAssistant/commit/ea27392dbe3c773774d6ce640688414c76e28693))
+
 ## [0.1.1](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.0...v0.1.1) (2026-06-27)
 
 
