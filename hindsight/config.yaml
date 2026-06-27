@@ -1,0 +1,30 @@
+name: Hindsight
+slug: hindsight
+description: Host Hindsight inside Home Assistant with Ingress
+version: 0.1.0
+url: https://github.com/stuartp44/HindsightHomeAssistant/tree/main/hindsight
+startup: application
+boot: auto
+init: false
+ingress: true
+ingress_port: 9999
+panel_title: Hindsight
+panel_icon: mdi:eye-outline
+arch:
+  - aarch64
+  - amd64
+map:
+  - type: addon_config
+    read_only: false
+options:
+  llm_api_key: ""
+  llm_provider: openai
+  llm_model: gpt-4o-mini
+  api_port: 8888
+  ui_port: 9999
+schema:
+  llm_api_key: password
+  llm_provider: list(openai|anthropic|gemini|groq|ollama|lmstudio|minimax|atlas)
+  llm_model: str
+  api_port: int(1,65535)
+  ui_port: int(1,65535)

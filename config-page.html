@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hindsight Add-on Config Builder</title>
+  <style>
+    :root {
+      --bg: #f5f4ef;
+      --card: #fffef8;
+      --ink: #1f2937;
+      --accent: #0f766e;
+      --accent-2: #134e4a;
+      --line: #d6d3c7;
+      --ok: #166534;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 5%, #d1fae5 0, transparent 35%),
+        radial-gradient(circle at 90% 10%, #e0f2fe 0, transparent 40%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      width: min(1024px, 94vw);
+      margin: 2rem auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.3rem, 2.2vw, 2rem);
+    }
+
+    h2 {
+      margin: 0 0 .75rem;
+      font-size: 1.05rem;
+    }
+
+    .muted {
+      margin: .4rem 0 0;
+      color: #4b5563;
+      font-size: .95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: .8rem;
+    }
+
+    label {
+      display: grid;
+      gap: .35rem;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    input, select, textarea, button {
+      font: inherit;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: .58rem .7rem;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 220px;
+      resize: vertical;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: .88rem;
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-top: .6rem;
+    }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: .55rem .9rem;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button.alt {
+      background: var(--accent-2);
+    }
+
+    .ok {
+      color: var(--ok);
+      min-height: 1.2rem;
+      font-size: .9rem;
+      margin-top: .4rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>Hindsight Add-on Config Builder</h1>
+      <p class="muted">Fill this form to generate repository.yaml and hindsight/config.yaml content.</p>
+    </section>
+
+    <section class="card">
+      <h2>Repository Metadata</h2>
+      <div class="grid">
+        <label>Name
+          <input id="repoName" value="Hindsight Home Assistant Add-ons">
+        </label>
+        <label>Repository URL
+          <input id="repoUrl" value="https://github.com/stuartp44/HindsightHomeAssistant">
+        </label>
+        <label>Maintainer
+          <input id="maintainer" value="Hindsight">
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Add-on Metadata</h2>
+      <div class="grid">
+        <label>Add-on Name
+          <input id="addonName" value="Hindsight">
+        </label>
+        <label>Slug
+          <input id="slug" value="hindsight">
+        </label>
+        <label>Description
+          <input id="description" value="Host Hindsight inside Home Assistant with Ingress">
+        </label>
+        <label>Version
+          <input id="version" value="0.1.0">
+        </label>
+        <label>Add-on URL
+          <input id="addonUrl" value="https://github.com/stuartp44/HindsightHomeAssistant/tree/main/hindsight">
+        </label>
+        <label>Panel Title
+          <input id="panelTitle" value="Hindsight">
+        </label>
+        <label>Panel Icon
+          <input id="panelIcon" value="mdi:eye-outline">
+        </label>
+        <label>API Port
+          <input id="apiPort" type="number" min="1" max="65535" value="8888">
+        </label>
+        <label>UI Port
+          <input id="uiPort" type="number" min="1" max="65535" value="9999">
+        </label>
+        <label>LLM Provider
+          <select id="llmProvider">
+            <option>openai</option>
+            <option>anthropic</option>
+            <option>gemini</option>
+            <option>groq</option>
+            <option>ollama</option>
+            <option>lmstudio</option>
+            <option>minimax</option>
+            <option>atlas</option>
+          </select>
+        </label>
+        <label>LLM Model
+          <input id="llmModel" value="gpt-4o-mini">
+        </label>
+      </div>
+      <div class="actions">
+        <button id="generate">Generate YAML</button>
+      </div>
+      <div id="status" class="ok"></div>
+    </section>
+
+    <section class="card">
+      <h2>repository.yaml</h2>
+      <textarea id="repoYaml"></textarea>
+      <div class="actions">
+        <button class="alt" data-copy="repoYaml">Copy</button>
+        <button class="alt" data-download="repo">Download</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>hindsight/config.yaml</h2>
+      <textarea id="addonYaml"></textarea>
+      <div class="actions">
+        <button class="alt" data-copy="addonYaml">Copy</button>
+        <button class="alt" data-download="addon">Download</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function yq(value) {
+      return "'" + String(value).replace(/'/g, "''") + "'";
+    }
+
+    function get(id) {
+      return document.getElementById(id).value.trim();
+    }
+
+    function render() {
+      const repo = [
+        "name: " + yq(get("repoName")),
+        "url: " + get("repoUrl"),
+        "maintainer: " + yq(get("maintainer"))
+      ].join("\n");
+
+      const addon = [
+        "name: " + yq(get("addonName")),
+        "slug: " + get("slug"),
+        "description: " + yq(get("description")),
+        "version: " + get("version"),
+        "url: " + get("addonUrl"),
+        "startup: application",
+        "boot: auto",
+        "init: false",
+        "ingress: true",
+        "ingress_port: " + Number(get("uiPort")),
+        "panel_title: " + yq(get("panelTitle")),
+        "panel_icon: " + get("panelIcon"),
+        "arch:",
+        "  - aarch64",
+        "  - amd64",
+        "map:",
+        "  - type: addon_config",
+        "    read_only: false",
+        "options:",
+        "  llm_api_key: ''",
+        "  llm_provider: " + get("llmProvider"),
+        "  llm_model: " + get("llmModel"),
+        "  api_port: " + Number(get("apiPort")),
+        "  ui_port: " + Number(get("uiPort")),
+        "schema:",
+        "  llm_api_key: password",
+        "  llm_provider: list(openai|anthropic|gemini|groq|ollama|lmstudio|minimax|atlas)",
+        "  llm_model: str",
+        "  api_port: int(1,65535)",
+        "  ui_port: int(1,65535)"
+      ].join("\n");
+
+      document.getElementById("repoYaml").value = repo + "\n";
+      document.getElementById("addonYaml").value = addon + "\n";
+      document.getElementById("status").textContent = "YAML generated.";
+    }
+
+    async function copyFrom(id) {
+      const value = document.getElementById(id).value;
+      await navigator.clipboard.writeText(value);
+      document.getElementById("status").textContent = "Copied to clipboard.";
+    }
+
+    function download(kind) {
+      const isRepo = kind === "repo";
+      const text = document.getElementById(isRepo ? "repoYaml" : "addonYaml").value;
+      const filename = isRepo ? "repository.yaml" : "config.yaml";
+      const blob = new Blob([text], { type: "text/yaml" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(url);
+      document.getElementById("status").textContent = "Downloaded " + filename + ".";
+    }
+
+    document.getElementById("generate").addEventListener("click", render);
+
+    document.querySelectorAll("[data-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        copyFrom(btn.getAttribute("data-copy"));
+      });
+    });
+
+    document.querySelectorAll("[data-download]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        download(btn.getAttribute("data-download"));
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
