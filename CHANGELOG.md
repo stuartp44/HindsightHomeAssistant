@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.3...v0.1.4) (2026-06-27)
+
+
+### Bug Fixes
+
+* **addon:** force non-root home during startup ([b0f56ab](https://github.com/stuartp44/HindsightHomeAssistant/commit/b0f56ab562d1dd2cd296e1bada01f6f481ce70d9))
+
 ## [0.1.3](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.1.2...v0.1.3) (2026-06-27)
 
 
