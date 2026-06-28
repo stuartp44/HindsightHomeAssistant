@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.5...v0.4.0) (2026-06-28)
+
+
+### Features
+
+* **addon:** add backup: cold for consistent PostgreSQL snapshots ([d037ae9](https://github.com/stuartp44/HindsightHomeAssistant/commit/d037ae90f4e3dfbd2be89c188d9db38f0e8d7cdd))
+
 ## [0.3.5](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.4...v0.3.5) (2026-06-27)
 
 
