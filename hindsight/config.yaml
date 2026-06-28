@@ -6,6 +6,7 @@ url: https://github.com/stuartp44/HindsightHomeAssistant/tree/main/hindsight
 startup: application
 boot: auto
 init: false
+backup: cold
 webui: http://[HOST]:[PORT:9999]/
 ports:
   8888/tcp: 8888
