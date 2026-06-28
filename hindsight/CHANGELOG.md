@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.4.0...v0.4.1) (2026-06-28)
+
+
+### Chores
+
+* add MIT license with Hindsight upstream acknowledgement ([35abeda](https://github.com/stuartp44/HindsightHomeAssistant/commit/35abeda12631b57482f29faf7793138d58f1d5da))
+
 ## [0.4.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.5...v0.4.0) (2026-06-28)
 
 
