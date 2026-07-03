@@ -39,6 +39,15 @@ if id -u "${APP_USER}" >/dev/null 2>&1; then
   chown -R "${APP_USER}:${APP_USER}" /data/.pg0
 fi
 
+# Symlink the hindsight user's home pg0 dir to /data/.pg0 to ensure
+# data persists across container restarts regardless of which path
+# the embedded PostgreSQL uses as its default data directory.
+APP_HOME_PG0="${APP_HOME}/.pg0"
+if [[ ! -L "${APP_HOME_PG0}" ]]; then
+  rm -rf "${APP_HOME_PG0}"
+  ln -sf /data/.pg0 "${APP_HOME_PG0}"
+fi
+
 export HINDSIGHT_API_LLM_API_KEY="${LLM_API_KEY}"
 export HINDSIGHT_API_LLM_PROVIDER="${LLM_PROVIDER:-openai}"
 export HINDSIGHT_API_LLM_MODEL="${LLM_MODEL:-gpt-4o-mini}"
