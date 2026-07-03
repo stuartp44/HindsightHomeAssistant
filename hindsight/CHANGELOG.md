@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.4.1](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.4.0...v0.4.1) (2026-07-03)
+
+
+### Bug Fixes
+
+* **run.sh:** ensure symlink for pg0 directory is recreated on changes ([49cba32](https://github.com/stuartp44/HindsightHomeAssistant/commit/49cba328f8d61f8e70532263e7a6e455e0674b81))
+
+
+### Chores
+
+* add MIT license with Hindsight upstream acknowledgement ([35abeda](https://github.com/stuartp44/HindsightHomeAssistant/commit/35abeda12631b57482f29faf7793138d58f1d5da))
+
 ## [0.4.0](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.3.5...v0.4.0) (2026-06-28)
 
 
