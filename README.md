@@ -54,13 +54,6 @@ curl -H "Authorization: Bearer <api_access_key>" \
 
 Full API reference: [hindsight.vectorize.io/api-reference](https://hindsight.vectorize.io/api-reference)
 
-## Upstream version automation
-
-This repository uses Renovate to track the upstream Hindsight Docker release and open dependency PRs that keep these in sync:
-
-- `hindsight/Dockerfile` base image tag (`ghcr.io/vectorize-io/hindsight`)
-- `hindsight/config.yaml` add-on `version`
-
 ## Links
 
 - [Hindsight upstream](https://github.com/vectorize-io/hindsight)
