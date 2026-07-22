@@ -1,14 +1,5 @@
 version: 2
 updates:
-  - package-ecosystem: docker
-    directory: /hindsight
-    schedule:
-      interval: weekly
-    commit-message:
-      prefix: "chore"
-    labels:
-      - dependencies
-
   - package-ecosystem: github-actions
     directory: /
     schedule:

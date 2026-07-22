@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../trekhomeassistant"
+		},
+		{
+			"path": "../duco_ventilation_sun_control"
+		},
+		{
+			"path": "../hasalter"
+		},
+		{
+			"path": "../ducopy"
+		},
+		{
+			"path": "../hambrewclient"
+		},
+		{
+			"path": "../pymbrewclient"
+		}
+	]
+}
