@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.2](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.4.1...v0.4.2) (2026-07-22)
+
+
+### Chores
+
+* bump vectorize-io/hindsight from 0.8.3 to 0.8.5 in /hindsight ([9e80e88](https://github.com/stuartp44/HindsightHomeAssistant/commit/9e80e8829b77a6a0061d2352ebb471c07670cb15))
+* bump vectorize-io/hindsight from 0.8.3 to 0.8.5 in /hindsight ([c3daab7](https://github.com/stuartp44/HindsightHomeAssistant/commit/c3daab73a6106a4e90a4a032b62b30123455b76e))
+* update dependabot configuration and remove renovate.json for version automation ([354fec0](https://github.com/stuartp44/HindsightHomeAssistant/commit/354fec010a4d6116e0df06351b7c470a6d4f7dbd))
+* update dependabot configuration, add .gitignore, and introduce renovate.json for version automation ([6f1af91](https://github.com/stuartp44/HindsightHomeAssistant/commit/6f1af91033d4888ce8f0bfd2f8c5871a2934f6ea))
+
 ## [0.4.1](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.4.0...v0.4.1) (2026-07-03)
 
 

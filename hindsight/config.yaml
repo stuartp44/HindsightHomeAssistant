@@ -1,7 +1,7 @@
 name: Hindsight
 slug: hindsight
 description: Host Hindsight inside Home Assistant with Ingress
-version: 0.4.1
+version: 0.4.2
 url: https://github.com/stuartp44/HindsightHomeAssistant/tree/main/hindsight
 startup: application
 boot: auto
