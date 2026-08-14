@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.4.2...v0.4.3) (2026-08-14)
+
+
+### Chores
+
+* bump vectorize-io/hindsight from 0.8.5 to 0.8.6 in /hindsight ([be3446f](https://github.com/stuartp44/HindsightHomeAssistant/commit/be3446fede9ee98b4ccf1dbba17c2d16857fe5d3))
+* bump vectorize-io/hindsight from 0.8.5 to 0.8.6 in /hindsight ([35e4dfe](https://github.com/stuartp44/HindsightHomeAssistant/commit/35e4dfec32a676b631600f5b547e9794fd4b0149))
+
 ## [0.4.2](https://github.com/stuartp44/HindsightHomeAssistant/compare/v0.4.1...v0.4.2) (2026-07-22)
 
 
