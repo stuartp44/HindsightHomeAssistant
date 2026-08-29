@@ -1,4 +1,4 @@
-FROM ghcr.io/vectorize-io/hindsight:0.8.6
+FROM ghcr.io/vectorize-io/hindsight:0.9.2
 
 USER root
 
